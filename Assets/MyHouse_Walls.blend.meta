@@ -1,0 +1,247 @@
+fileFormatVersion: 2
+guid: d45b63c1d86d1e946afbc26b313547ce
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Plane
+    100004: Plane_001
+    100006: Plane_002
+    100008: Plane_003
+    100010: Plane_004
+    100012: Plane_005
+    100014: Plane_006
+    100016: Plane_007
+    100018: Plane_008
+    100020: Plane_009
+    100022: Plane_010
+    400000: //RootNode
+    400002: Plane
+    400004: Plane_001
+    400006: Plane_002
+    400008: Plane_003
+    400010: Plane_004
+    400012: Plane_005
+    400014: Plane_006
+    400016: Plane_007
+    400018: Plane_008
+    400020: Plane_009
+    400022: Plane_010
+    2100000: unnamed
+    2100002: grass
+    2100004: roof
+    2100006: door
+    2100008: door2
+    2100010: floor
+    2100012: walls
+    2100014: walls8_001
+    2100016: walls11
+    2100018: walls10
+    2100020: walls3_001
+    2100022: walls6
+    2100024: walles_2
+    2100026: walls4
+    2100028: walls5_001
+    2100030: walls9
+    2100032: walls7
+    2300000: Plane
+    2300002: Plane_001
+    2300004: Plane_002
+    2300006: Plane_003
+    2300008: Plane_004
+    2300010: Plane_005
+    2300012: Plane_006
+    2300014: Plane_007
+    2300016: Plane_008
+    2300018: Plane_009
+    2300020: Plane_010
+    3300000: Plane
+    3300002: Plane_001
+    3300004: Plane_002
+    3300006: Plane_003
+    3300008: Plane_004
+    3300010: Plane_005
+    3300012: Plane_006
+    3300014: Plane_007
+    3300016: Plane_008
+    3300018: Plane_009
+    3300020: Plane_010
+    4300000: Plane_010
+    4300002: Plane_009
+    4300004: Plane_008
+    4300006: Plane_007
+    4300008: Plane_006
+    4300010: Plane_005
+    4300012: Plane_004
+    4300014: Plane_003
+    4300016: Plane_002
+    4300018: Plane_001
+    4300020: Plane
+    7400000: Default Take
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: door
+    second: {fileID: 2100000, guid: e70e5335790ed5243aa34047481c2a62, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: door2
+    second: {fileID: 2100000, guid: f9a805867c03bb540910ff48585a6a0f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor
+    second: {fileID: 2100000, guid: e8952ce9df90bc14999f3c9404b5a338, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: grass
+    second: {fileID: 2100000, guid: be4f1483e708a9c4c80f8a8986db477d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: roof
+    second: {instanceID: 0}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: unnamed
+    second: {fileID: 2100000, guid: 2488a82192b8a9e4aae7f13dee7d9e84, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: walles_2
+    second: {fileID: 2100000, guid: 97f779c2ade67d444bef1bdcc41647ef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: walls
+    second: {fileID: 2100000, guid: 1dc00ce02604502418794013d594110e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: walls10
+    second: {fileID: 2100000, guid: b7468c775c645174f825a8f9f89269d4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: walls11
+    second: {fileID: 2100000, guid: 389a8eb772434c84ebf806aea1b5400a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: walls3_001
+    second: {fileID: 2100000, guid: 306cdf9b6156e4e4c9c15b2ec382501f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: walls4
+    second: {fileID: 2100000, guid: e3ba95f3091136a4bb2eecf634ffed77, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: walls5_001
+    second: {fileID: 2100000, guid: 7c9a14cefdd0fef45a6e54b0d7418a2f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: walls6
+    second: {fileID: 2100000, guid: 2bbc13c98f6a35d4790049750095357a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: walls7
+    second: {fileID: 2100000, guid: fd73f19e284ee8e4f860f3beae84ba00, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: walls8_001
+    second: {fileID: 2100000, guid: e5fdaaab293b3f6418c9045990882e90, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: walls9
+    second: {fileID: 2100000, guid: 2bb6822b3ca0563439d71a287bf2f72c, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
