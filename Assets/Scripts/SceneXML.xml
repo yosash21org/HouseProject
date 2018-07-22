@@ -1,0 +1,23 @@
+﻿<Map>
+  <SceneList>
+    <SelectableObject Name="Axe" ObjectID="1" ActionType="1" RelatedObjectID="2" ActivationCount ="0" PosX="0" PosY="0" PosZ="0">
+    </SelectableObject>
+
+    <!--
+    MoveToDirection = 1,
+    ShowNextPoints = 2,
+    RollDice = 4,
+    FightEnemy = 8,
+    MoveToOutScene = 16,
+    LookForHiddenDoor = 32,
+    MoveToNextScene = 64,
+    ShowUseLuck = 128
+    
+    RollForEnemyTable = 1,
+    RollForLuck = 2,
+    RollForCollectGold = 3,
+    RollForLoseGold = 4,
+    -->
+
+  </SceneList>
+</Map>
