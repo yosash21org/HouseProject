@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class SelectableObject : MonoBehaviour
 {
-    [SerializeField]
-    private int _actionType;
+    [HideInInspector] public ActionType actionType;
     public int objectID;
-    public int relatedObjectID;
-    public int activationCount;
-
-    [HideInInspector]
-    public InteractableManager manager;
+    [HideInInspector] public int relatedObjectID;
+    [HideInInspector] public int activationCount;
+    [HideInInspector] public float posX;
+    [HideInInspector] public float posY;
+    [HideInInspector] public float posZ;
+    [HideInInspector] public string failActionMessage;
+    [HideInInspector] public InteractableManager manager;
 
     private bool _isActivated;
     private Vector3 originalPosition;
@@ -41,35 +42,41 @@ public class SelectableObject : MonoBehaviour
         }
     }
 
-    public void InitInfo()
+    public void InitInfo(SelectableDetail selectableInfo)
     {
-
+        actionType = (ActionType)selectableInfo.ActionType;
+        activationCount = selectableInfo.ActivationCount;
+        relatedObjectID = selectableInfo.RelatedObjectID;
+        posX = selectableInfo.PosX;
+        posY = selectableInfo.PosY;
+        posZ = selectableInfo.PosZ;
+        failActionMessage = selectableInfo.FailActionMessage;
     }
 
     private void MakeAction()
     {
         if (activationCount == 0)
         {
-            if(relatedObjectID != 0)
+            if (relatedObjectID != 0)
             {
                 manager.UpdateSelectable(relatedObjectID);
             }
 
-            switch (_actionType)
+            switch (actionType)
             {
-                case 1:
+                case ActionType.UseObject:
                     Destroy(gameObject);
                     break;
 
-                case 2:
+                case ActionType.EndLevel:
                     Debug.Log("Game Won!!!");
                     break;
-                case 3:
+                case ActionType.Move:
                     var transform = gameObject.GetComponent<Transform>();
-                    if(!_isActivated)
+                    if (!_isActivated)
                     {
                         originalPosition = transform.position;
-                        transform.position = new Vector3(originalPosition.x, originalPosition.y, originalPosition.z + 1f);
+                        transform.position = new Vector3(originalPosition.x + posX, originalPosition.y + posY, originalPosition.z + posZ);
                         _isActivated = true;
                     }
                     else
@@ -78,12 +85,12 @@ public class SelectableObject : MonoBehaviour
                         _isActivated = false;
                     }
                     break;
-                case 4:
+                case ActionType.Rotate:
                     var transform1 = gameObject.GetComponent<Transform>();
-                    if(!_isActivated)
+                    if (!_isActivated)
                     {
                         originalRotation = transform1.rotation;
-                        transform1.rotation = new Quaternion(originalRotation.x, originalRotation.y + 90, originalRotation.z, originalRotation.w);
+                        transform1.rotation = new Quaternion(originalRotation.x + posX, originalRotation.y + posY, originalRotation.z + posZ, originalRotation.w);
                         _isActivated = true;
                     }
                     else
@@ -91,15 +98,15 @@ public class SelectableObject : MonoBehaviour
                         transform1.rotation = originalRotation;
                         _isActivated = false; ;
                     }
-                 
+
                     break;
             }
         }
         else
         {
-            Debug.Log("Action Cannot Be Done!!");
+            Debug.Log(failActionMessage);
         }
-        
+
 
     }
 }

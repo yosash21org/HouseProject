@@ -1,22 +1,28 @@
 ﻿<Map>
   <SceneList>
-    <SelectableObject Name="Axe" ObjectID="1" ActionType="1" RelatedObjectID="2" ActivationCount ="0" PosX="0" PosY="0" PosZ="0">
+    <SelectableObject Name="Axe" ObjectID="1" ActionType="1" RelatedObjectID="2" ActivationCount ="0">
+    </SelectableObject>
+
+    <SelectableObject Name="Wood" ObjectID="2" ActionType="1" RelatedObjectID="3" ActivationCount ="1">
+    </SelectableObject>
+
+    <SelectableObject Name="ExitWindow" ObjectID="3" ActionType="10" RelatedObjectID="0" ActivationCount ="3" FailActionMessage="Action Cannot Be Done!!">
+    </SelectableObject>
+
+    <SelectableObject Name="Door" ObjectID="4" ActionType="3" RelatedObjectID="0" ActivationCount ="0" PosY="90">
+    </SelectableObject>
+
+    <SelectableObject Name="Drawer" ObjectID="5" ActionType="2" RelatedObjectID="0" ActivationCount ="0" PosZ="1">
+    </SelectableObject>
+
+    <SelectableObject Name="Plate" ObjectID="6" ActionType="1" RelatedObjectID="0" ActivationCount ="0">
     </SelectableObject>
 
     <!--
-    MoveToDirection = 1,
-    ShowNextPoints = 2,
-    RollDice = 4,
-    FightEnemy = 8,
-    MoveToOutScene = 16,
-    LookForHiddenDoor = 32,
-    MoveToNextScene = 64,
-    ShowUseLuck = 128
-    
-    RollForEnemyTable = 1,
-    RollForLuck = 2,
-    RollForCollectGold = 3,
-    RollForLoseGold = 4,
+    UseObject = 1,
+    Move = 2,
+    Rotate = 3,
+    EndLevel = 10,
     -->
 
   </SceneList>

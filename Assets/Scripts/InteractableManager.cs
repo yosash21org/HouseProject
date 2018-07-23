@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Xml.Linq;
@@ -13,12 +12,24 @@ public class InteractableManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        var details = GetScenesFromXML();
+
         selectableList = new List<SelectableObject>();
-        var children = transform.GetComponentsInChildren<SelectableObject>();
-        foreach (var child in children)
+        var selectableObjects = transform.GetComponentsInChildren<SelectableObject>();
+        foreach (var selectableObject in selectableObjects)
         {
-            selectableList.Add(child);
-            child.manager = this;
+            if(!details.ContainsKey(selectableObject.objectID))
+            {
+                Debug.Log(string.Format("Key {0} is missing on {1}", selectableObject.objectID, selectableObject.gameObject.name));
+                continue;
+            }
+
+            var childInfo = details[selectableObject.objectID];
+
+            selectableObject.InitInfo(childInfo);
+
+            selectableObject.manager = this;
+            selectableList.Add(selectableObject);
         }
     }
 
@@ -36,23 +47,30 @@ public class InteractableManager : MonoBehaviour
         }
     }
 
-    public Dictionary<int, XmlDetail> GetScenesFromXML()// GameController controller
+    public Dictionary<int, SelectableDetail> GetScenesFromXML()// GameController controller
     {
-        var scenesDictionary = new Dictionary<int, XmlDetail>();
+        var scenesDictionary = new Dictionary<int, SelectableDetail>();
         var xmlString = File.ReadAllText(GameConsts.SceneXmlPath);
         var xml = XElement.Parse(xmlString);
 
         var sceneListXml = xml.Element("SceneList");
         foreach (var sceneXml in sceneListXml.Elements("SelectableObject"))
         {
-            var xmlDetail = new XmlDetail();
+            var xmlDetail = new SelectableDetail();
+
             xmlDetail.ObjectID = int.Parse(sceneXml.Attribute("ObjectID").Value);
             xmlDetail.ActivationCount = int.Parse(sceneXml.Attribute("ActivationCount").Value);
             xmlDetail.ActionType = int.Parse(sceneXml.Attribute("ActionType").Value);
             xmlDetail.RelatedObjectID = int.Parse(sceneXml.Attribute("RelatedObjectID").Value);
-            xmlDetail.PosX = float.Parse(sceneXml.Attribute("PosX").Value);
-            xmlDetail.PosY = float.Parse(sceneXml.Attribute("PosY").Value);
-            xmlDetail.PosZ = float.Parse(sceneXml.Attribute("PosZ").Value);
+
+            if (sceneXml.Attribute("PosX") != null)
+                xmlDetail.PosX = float.Parse(sceneXml.Attribute("PosX").Value);
+            if (sceneXml.Attribute("PosY") != null)
+                xmlDetail.PosY = float.Parse(sceneXml.Attribute("PosY").Value);
+            if (sceneXml.Attribute("PosZ") != null)
+                xmlDetail.PosZ = float.Parse(sceneXml.Attribute("PosZ").Value);
+            if (sceneXml.Attribute("FailActionMessage") != null)
+                xmlDetail.FailActionMessage = sceneXml.Attribute("FailActionMessage").Value;
 
             scenesDictionary.Add(xmlDetail.ObjectID, xmlDetail);
         }
@@ -61,7 +79,7 @@ public class InteractableManager : MonoBehaviour
     }
 }
 
-public class XmlDetail
+public class SelectableDetail
 {
     public int ActionType { get; set; }
     public int ObjectID { get; set; }
@@ -70,10 +88,14 @@ public class XmlDetail
     public float PosX { get; set; }
     public float PosY { get; set; }
     public float PosZ { get; set; }
+    public string FailActionMessage { get; set; }
 }
 
 public enum ActionType
 {
-    Destroy = 1,
-    EndLevel = 2,
+    UseObject = 1,
+    Move = 2,
+    Rotate = 3,
+    EndLevel = 10,
+
 }
