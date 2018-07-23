@@ -96,6 +96,7 @@ public enum ActionType
     UseObject = 1,
     Move = 2,
     Rotate = 3,
+    ActivateAnimation = 4,
     EndLevel = 10,
 
 }

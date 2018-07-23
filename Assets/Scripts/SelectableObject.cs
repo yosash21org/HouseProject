@@ -100,6 +100,10 @@ public class SelectableObject : MonoBehaviour
                     }
 
                     break;
+                case ActionType.ActivateAnimation:
+                    //GetComponent<>
+
+                    break;
             }
         }
         else
